@@ -1,0 +1,21 @@
+<body>
+    <div class="container">
+        <header>
+            <h1> A simple Todo list </h1>
+            <form action="" class="add-task">
+                <input type="text" name="text" placeholder="Type to add new tasks"/>
+            </form>
+        </header>
+
+        <ul class="list-items">
+            {{#each tasks}}
+                {{> task}}
+            {{/each}}
+        </ul>
+    </div>
+</body>
+
+<template name="task">
+    <li>{{text}}</li>
+    <hr>
+</template>
