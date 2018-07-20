@@ -2,9 +2,16 @@
     <div class="container">
         <header>
             <h1> A simple Todo list </h1>
-            <form action="" class="add-task">
-                <input type="text" name="text" placeholder="Type to add new tasks"/>
-            </form>
+            {{> loginButtons }}
+            {{#if currentUser }}
+                <form action="" class="add-task">
+                    <input type="text" name="text" placeholder="Type to add new tasks"/>
+                </form>
+            {{/if}}
+            <label for="" class="hide-tasks">
+                <input type="checkbox"/>
+                Hide Completed Tasks
+            </label>
         </header>
 
         <ul class="list-items">
@@ -14,8 +21,3 @@
         </ul>
     </div>
 </body>
-
-<template name="task">
-    <li>{{text}}</li>
-    <hr>
-</template>
